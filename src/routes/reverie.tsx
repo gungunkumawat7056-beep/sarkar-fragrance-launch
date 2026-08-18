@@ -108,7 +108,7 @@ function ReveriePage() {
           </div>
         </section>
 
-        <section className="border-t border-border px-6 py-20 md:px-14">
+        <section id="pyramid" className="scroll-mt-24 border-t border-border px-6 py-20 md:px-14">
           <p className="eyebrow text-muted-foreground">The Pyramid</p>
           <div className="mt-10 grid gap-12 lg:grid-cols-[1fr_1fr]">
             <div className="space-y-10">
