@@ -2,9 +2,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { reverie } from "@/lib/reverie";
-import hero from "@/assets/reverie-hero.jpg";
-import bottle from "@/assets/reverie-bottle.jpg";
-import notesImg from "@/assets/reverie-notes.jpg";
+import hero640 from "@/assets/reverie-hero-640.webp";
+import hero1024 from "@/assets/reverie-hero-1024.webp";
+import hero1600 from "@/assets/reverie-hero-1600.webp";
+import bottle640 from "@/assets/reverie-bottle-640.webp";
+import bottle1024 from "@/assets/reverie-bottle-1024.webp";
+import notes640 from "@/assets/reverie-notes-640.webp";
+import notes1024 from "@/assets/reverie-notes-1024.webp";
+
+const heroSrcSet = `${hero640} 640w, ${hero1024} 1024w, ${hero1600} 1600w`;
+const bottleSrcSet = `${bottle640} 640w, ${bottle1024} 1024w`;
+const notesSrcSet = `${notes640} 640w, ${notes1024} 1024w`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
