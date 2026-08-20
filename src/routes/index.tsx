@@ -30,6 +30,16 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
     ],
+    links: [
+      {
+        rel: "preload",
+        as: "image",
+        href: hero1024,
+        imagesrcset: heroSrcSet,
+        imagesizes: "100vw",
+        fetchpriority: "high",
+      },
+    ],
   }),
   component: Index,
 });
