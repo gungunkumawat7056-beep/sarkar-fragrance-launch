@@ -4,9 +4,16 @@ import { Minus, Plus, Check } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { reverie } from "@/lib/reverie";
-import bottle from "@/assets/reverie-bottle.jpg";
-import packaging from "@/assets/reverie-packaging.jpg";
-import notesImg from "@/assets/reverie-notes.jpg";
+import bottle640 from "@/assets/reverie-bottle-640.webp";
+import bottle1024 from "@/assets/reverie-bottle-1024.webp";
+import packaging640 from "@/assets/reverie-packaging-640.webp";
+import packaging1024 from "@/assets/reverie-packaging-1024.webp";
+import notes640 from "@/assets/reverie-notes-640.webp";
+import notes1024 from "@/assets/reverie-notes-1024.webp";
+
+const bottleSrcSet = `${bottle640} 640w, ${bottle1024} 1024w`;
+const packagingSrcSet = `${packaging640} 640w, ${packaging1024} 1024w`;
+const notesSrcSet = `${notes640} 640w, ${notes1024} 1024w`;
 
 export const Route = createFileRoute("/reverie")({
   head: () => ({
