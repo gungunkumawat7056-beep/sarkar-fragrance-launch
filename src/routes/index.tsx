@@ -116,9 +116,12 @@ function Index() {
 
         <section className="relative border-y border-border">
           <img
-            src={notesImg}
+            src={notes1024}
+            srcSet={notesSrcSet}
+            sizes="100vw"
             alt="Chocolate, marshmallow, raspberry and fig on dark stone"
             loading="lazy"
+            decoding="async"
             width={1408}
             height={912}
             className="h-[60vh] w-full object-cover"
