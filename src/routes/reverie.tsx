@@ -137,7 +137,10 @@ function ReveriePage() {
               ))}
             </div>
             <img
-              src={notesImg}
+              src={notes1024}
+              srcSet={notesSrcSet}
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              decoding="async"
               alt="Dark chocolate, marshmallows, raspberries and fig on black stone"
               loading="lazy"
               width={1408}
