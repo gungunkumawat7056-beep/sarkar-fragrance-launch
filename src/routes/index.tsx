@@ -49,7 +49,11 @@ function Index() {
       <main>
         <section className="relative">
           <img
-            src={hero}
+            src={hero1024}
+            srcSet={heroSrcSet}
+            sizes="100vw"
+            fetchPriority="high"
+            decoding="async"
             alt="Sarkar Reverie perfume bottle lit in darkness on dark stone"
             width={1920}
             height={1200}
