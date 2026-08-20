@@ -2,9 +2,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { reverie } from "@/lib/reverie";
-import hero from "@/assets/reverie-hero.jpg";
-import bottle from "@/assets/reverie-bottle.jpg";
-import notesImg from "@/assets/reverie-notes.jpg";
+import hero640 from "@/assets/reverie-hero-640.webp";
+import hero1024 from "@/assets/reverie-hero-1024.webp";
+import hero1600 from "@/assets/reverie-hero-1600.webp";
+import bottle640 from "@/assets/reverie-bottle-640.webp";
+import bottle1024 from "@/assets/reverie-bottle-1024.webp";
+import notes640 from "@/assets/reverie-notes-640.webp";
+import notes1024 from "@/assets/reverie-notes-1024.webp";
+
+const heroSrcSet = `${hero640} 640w, ${hero1024} 1024w, ${hero1600} 1600w`;
+const bottleSrcSet = `${bottle640} 640w, ${bottle1024} 1024w`;
+const notesSrcSet = `${notes640} 640w, ${notes1024} 1024w`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -21,6 +29,16 @@ export const Route = createFileRoute("/")({
         content: "Sweet. Reckless. Unforgettable. The newest addition to the Sarkar collection.",
       },
       { property: "og:type", content: "website" },
+    ],
+    links: [
+      {
+        rel: "preload",
+        as: "image",
+        href: hero1024,
+        imageSrcSet: heroSrcSet,
+        imageSizes: "100vw",
+        fetchPriority: "high",
+      },
     ],
   }),
   component: Index,
@@ -41,7 +59,11 @@ function Index() {
       <main>
         <section className="relative">
           <img
-            src={hero}
+            src={hero1024}
+            srcSet={heroSrcSet}
+            sizes="100vw"
+            fetchPriority="high"
+            decoding="async"
             alt="Sarkar Reverie perfume bottle lit in darkness on dark stone"
             width={1920}
             height={1200}
@@ -63,9 +85,12 @@ function Index() {
         <section className="grid grid-cols-1 lg:grid-cols-2">
           <div className="flex items-center justify-center bg-card p-10 lg:p-20">
             <img
-              src={bottle}
+              src={bottle1024}
+              srcSet={bottleSrcSet}
+              sizes="(min-width: 1024px) 50vw, 100vw"
               alt="Sarkar Reverie bishop-shaped bottle in cocoa-rose glass"
               loading="lazy"
+              decoding="async"
               width={1408}
               height={1600}
               className="max-h-[60vh] w-auto object-contain"
@@ -101,9 +126,12 @@ function Index() {
 
         <section className="relative border-y border-border">
           <img
-            src={notesImg}
+            src={notes1024}
+            srcSet={notesSrcSet}
+            sizes="100vw"
             alt="Chocolate, marshmallow, raspberry and fig on dark stone"
             loading="lazy"
+            decoding="async"
             width={1408}
             height={912}
             className="h-[60vh] w-full object-cover"
