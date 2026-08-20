@@ -75,9 +75,12 @@ function Index() {
         <section className="grid grid-cols-1 lg:grid-cols-2">
           <div className="flex items-center justify-center bg-card p-10 lg:p-20">
             <img
-              src={bottle}
+              src={bottle1024}
+              srcSet={bottleSrcSet}
+              sizes="(min-width: 1024px) 50vw, 100vw"
               alt="Sarkar Reverie bishop-shaped bottle in cocoa-rose glass"
               loading="lazy"
+              decoding="async"
               width={1408}
               height={1600}
               className="max-h-[60vh] w-auto object-contain"
