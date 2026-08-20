@@ -152,7 +152,10 @@ function ReveriePage() {
 
         <section className="grid grid-cols-1 border-t border-border lg:grid-cols-2">
           <img
-            src={packaging}
+            src={packaging1024}
+            srcSet={packagingSrcSet}
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            decoding="async"
             alt="Sarkar Reverie matte black packaging beside the bottle"
             loading="lazy"
             width={1408}
